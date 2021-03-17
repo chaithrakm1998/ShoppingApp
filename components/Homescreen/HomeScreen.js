@@ -1,11 +1,14 @@
 import React from 'react';
-import {StyleSheet,Text,View,Image,ImageBackground,TouchableOpacity,TextInput} from 'react-native';
+import {StyleSheet,Text,View,Image,SafeAreaView,ImageBackground,ScrollView,TouchableOpacity,TextInput} from 'react-native';
 import '../../assets/logo1.png';
 import '../../assets/bg.png';
+import '../../assets/icon.png';
+import Icon from 'react-native-vector-icons/Ionicons'
+import Explore from '../explore/Explore'
 
 export default function HomeScreen({navigation}) {
 
-  const [text, onChangeText] = React.useState("Find Something...!!");
+  
 
     const onHeader1Press =()=>{
         navigation.navigate("contact")
@@ -23,7 +26,7 @@ export default function HomeScreen({navigation}) {
           
             <View style={styles.Screen}>
                 
-                <TouchableOpacity onPress={ () => navigation.push('HomeScreen')} >
+                <TouchableOpacity onPress={ () => navigation.navigate('HomeScreen')} >
                 <Image 
                     style={styles.logo}
                     source={require('../../assets/logo1.png')}
@@ -33,17 +36,30 @@ export default function HomeScreen({navigation}) {
                 <Text onPress={onHeader2Press} style={styles.header2}>Contact</Text>
             
             </View>
-            <View style={styles.find}>
-            <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
-       
-      >
-        
-      </TextInput>
-     
-            </View>
+            <SafeAreaView style={{ flex: 1 }}>
+                <View style={{ flex: 1 }}>
+                    <View style={{ height:60, backgroundColor: 'white', borderBottomWidth: 1, borderBottomColor: '#dddddd' }}>
+                        <View style={{
+                            flexDirection: 'row', padding: 30,
+                            backgroundColor: 'white', 
+                            shadowOffset: { width: 0, height: 0 },
+                            shadowColor: 'black',
+                            shadowOpacity: 0.2,
+                            elevation: 1,
+                           
+                        }}>
+                            <Icon name="ios-search" size={30} style={{ marginRight: 20 }} />
+                            <TextInput
+                                underlineColorAndroid="transparent"
+                                placeholder="Find Something"
+                                placeholderTextColor="grey"
+                                style={{ flex: 1, fontWeight: '700',fontSize:25, backgroundColor: 'white' }}
+                            />
+                        </View>
+                    </View>
+                </View>
+            </SafeAreaView>
+            <ScrollView><Explore/></ScrollView>
             </ImageBackground>
             
         );
