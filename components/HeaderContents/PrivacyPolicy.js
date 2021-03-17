@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet,Text} from 'react-native';
-export default function Contact() {
+export default function PrivacyPolicy() {
 
 
   return(
      
-      <Text styles={styles.footerLink}>We Make It Easier For You To Remember..Add Your Goals Here....!!!!</Text>
+      <Text styles={styles.footerLink}>privacy policy</Text>
       
   );
 }

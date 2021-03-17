@@ -1,15 +1,17 @@
 import React from 'react'
-import {StyleSheet,Text,View,ScrollView} from 'react-native';
-
-import Header from './components/contentheader/Header'
-import Contact from './components/contentheader/contact'
-import PrivacyPolicy from './components/contentheader/PrivacyPolicy'
+import {StyleSheet,View,ScrollView} from 'react-native';
+import HomeScreen from './components/Homescreen/HomeScreen'
 
 export default function App(){
   return(
+   
+
+  
     <ScrollView style={styles.container}>
-      <Header/>
+      <HomeScreen/> 
+      
       </ScrollView>
+      
   );
 }
 
