@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, ScrollView, Button } from "react-native";
+import { View, StyleSheet,Text, ScrollView,TouchableOpacity, Button } from "react-native";
 import Category from "./Category";
 import "../../assets/men.png";
 import "../../assets/women.png";
@@ -9,14 +9,19 @@ import "../../assets/watches.png";
 import "../../assets/shoes.png";
 
 export default function Explore({ navigation }) {
-  return (
+
+    const onviewmorePress =()=>{
+        navigation.navigate("ProductPage")
+    };
+    
+    
+    return (
     <ScrollView scrollEventThrottle={16}>
       <View style={{ height: 400, marginTop: 20 }}>
         <View style={styles.button}>
-          <Button
-            title="View More -->"
-            onPress={() => navigation.navigate("product page")}
-          />
+            
+        <Text onPress={onviewmorePress} style={styles.viewmore}>View More...</Text>
+         
         </View>
 
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={true}>

@@ -11,10 +11,10 @@ export default function HomeScreen({navigation}) {
   
 
     const onHeader1Press =()=>{
-        navigation.navigate("contact")
+        navigation.navigate("PrivacyPolicy")
     };
     const onHeader2Press =()=>{
-        navigation.navigate("Privacy Policy")
+        navigation.navigate("Contact")
     };
    
 
